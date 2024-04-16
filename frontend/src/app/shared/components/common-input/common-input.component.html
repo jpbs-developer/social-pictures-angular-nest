@@ -1,0 +1,12 @@
+<fieldset class="w-full">
+  <label class="mb-2" for="text"> {{ label() }}</label>
+  <input
+    formControlName="username"
+    data-test="input"
+    (keyup)="setText($event)"
+    (blur)="onTouched()"
+    class="border mt-1 w-full border-gray-200 border-solid px-4 py-3 rounded-lg outline-blue-500"
+    type="text"
+    id="text"
+  />
+</fieldset>

@@ -27,7 +27,7 @@ export class SessionsService {
     const matchPassword = await bcrypt.compare(password, user.password);
     if (!matchPassword)
       throw new UnauthorizedException('Invalid email or password!');
-
+    delete user.password;
     const payload = { sub: user.id, username: user.username };
     const token = await this.jwtService.signAsync(payload);
     return { user, token };

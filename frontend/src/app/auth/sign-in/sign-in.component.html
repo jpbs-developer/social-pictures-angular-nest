@@ -1,0 +1,44 @@
+<h2 class="text-3xl font-extrabold">Sign in</h2>
+<h3 class="text-sm mb-5">
+  Don't have an account?
+  <a class="text-blue-500 cursor-pointer hover:underline">Sign up</a>
+</h3>
+<form
+  [formGroup]="signinForm"
+  (submit)="submit()"
+  class="grid grid-cols-1 gap-5"
+>
+  <div>
+    <app-common-input [label]="'Username'" formControlName="username">
+    </app-common-input>
+    @if (signinForm.get('username')?.hasError('required') &&
+    signinForm.get('username')?.touched) {
+    <app-input-errors errorMessage="Username is required" />
+    }
+  </div>
+
+  <div>
+    <app-common-input [label]="'Password'" formControlName="password" />
+    @if (signinForm.get('password')?.hasError('required') &&
+    signinForm.get('password')?.touched) {
+    <app-input-errors errorMessage="Password is required" />
+    }
+  </div>
+
+  <article class="flex items-center justify-between gap-3 mb-5">
+    <div>
+      <input type="checkbox" id="remember_me" name="remember_me" />
+      <label for="remember_me"> Remember me</label><br />
+    </div>
+    <a class="text-blue-500 text-sm cursor-pointer hover:underline"
+      >Forgot password?</a
+    >
+  </article>
+
+  <button
+    [disabled]="signinForm.invalid"
+    class="border border-solid border-gray-400 hover:bg-blue-400 hover:text-white transition-colors w-full rounded-3xl py-3 h"
+  >
+    Sign in
+  </button>
+</form>
