@@ -18,7 +18,8 @@
   </div>
 
   <div>
-    <app-common-input [label]="'Password'" formControlName="password" />
+    <app-password-input label="Password" formControlName="password"></app-password-input>
+
     @if (signinForm.get('password')?.hasError('required') &&
     signinForm.get('password')?.touched) {
     <app-input-errors errorMessage="Password is required" />
@@ -26,13 +27,8 @@
   </div>
 
   <article class="flex items-center justify-between gap-3 mb-5">
-    <div>
-      <input type="checkbox" id="remember_me" name="remember_me" />
-      <label for="remember_me"> Remember me</label><br />
-    </div>
-    <a class="text-blue-500 text-sm cursor-pointer hover:underline"
-      >Forgot password?</a
-    >
+    <app-remember-checkbox [(handleRememberCheck)]="isRemember"></app-remember-checkbox>
+    <a class="text-blue-500 text-sm cursor-pointer hover:underline">Forgot password?</a>
   </article>
 
   <button

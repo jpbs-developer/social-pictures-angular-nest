@@ -1,0 +1,10 @@
+<input
+  type="checkbox"
+  class="mr-1"
+  data-test="checkbox"
+  id="remember_me"
+  name="remember_me"
+  (change)="changeCheckbox($event)"
+  [checked]="handleRememberCheck()"
+/>
+<label for="remember_me"> Remember me</label><br />

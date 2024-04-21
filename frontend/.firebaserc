@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "social-pictures-8c831": {
+      "hosting": {
+        "frontend": [
+          "socialpictures"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "social-pictures-8c831"
+  }
+}
