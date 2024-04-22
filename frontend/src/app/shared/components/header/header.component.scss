@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+button {
+  @apply rounded-full font-bold px-5 py-3;
+}
+
+.active {
+  @apply bg-black text-white;
+}
+
+input {
+  @apply bg-gray-400/30 w-full rounded-full outline-blue-500 px-5 py-4;
+}
+
+fa-icon{
+  @apply cursor-pointer
+}

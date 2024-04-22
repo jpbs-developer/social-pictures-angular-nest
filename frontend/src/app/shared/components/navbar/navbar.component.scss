@@ -1,0 +1,11 @@
+li {
+  @apply p-2 transition-colors;
+  &:not(.module-title) {
+    @apply hover:bg-white text-black cursor-pointer rounded-md;
+  }
+
+  &.active {
+    @apply bg-white text-black cursor-pointer rounded-md;
+  }
+
+}

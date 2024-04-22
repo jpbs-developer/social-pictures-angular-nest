@@ -3,12 +3,10 @@ import {
   Component,
   OnInit,
   inject,
-  signal,
 } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -17,6 +15,7 @@ import { CommonInputComponent } from '../../shared/components/common-input/commo
 import { InputErrorsComponent } from '../../core/errors/input-errors/input-errors.component';
 import { RememberCheckboxComponent } from './remember-checkbox/remember-checkbox.component';
 import { PasswordInputComponent } from '../../shared/components/password-input/password-input.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -36,6 +35,7 @@ export default class SignInComponent implements OnInit {
   isRemember = false;
   private readonly fb = inject(FormBuilder);
   private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
   signinForm: FormGroup;
 
   ngOnInit(): void {
@@ -51,11 +51,10 @@ export default class SignInComponent implements OnInit {
 
   submit() {
     const { username, password } = this.signinForm.getRawValue();
-    console.log(this.isRemember);
 
     this.authService.signin({ username, password }).subscribe({
       next: (response) => {
-        console.log(response);
+        this.router.navigate(['/plataform']);
       },
     });
   }

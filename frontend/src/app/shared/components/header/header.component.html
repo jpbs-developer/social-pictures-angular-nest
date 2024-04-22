@@ -1,0 +1,16 @@
+<header class="px-5 py-3 grid grid-cols-12 gap-5 items-center">
+  <section class="flex items-center gap-2 col-span-2">
+    <img src="assets/svg/logo.svg" alt="" />
+    <button [routerLink]="['/plataform/photos']" routerLinkActive="active">
+      Home
+    </button>
+    <button [routerLink]="['/plataform/create']" routerLinkActive="active">
+      Create
+    </button>
+  </section>
+  <input type="text" class="col-span-8" placeholder="Search" />
+  <section class="col-span-2 flex items-center gap-5">
+    <fa-icon [icon]="faBell" size="xl"></fa-icon>
+    <fa-icon [icon]="faComment" size="xl"></fa-icon>
+  </section>
+</header>

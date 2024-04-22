@@ -1,0 +1,5 @@
+<section class="columns-7 mt-10">
+  @for (photo of photos(); track photo.id) {
+  <img class="h-auto max-w-full rounded-lg mb-3" [src]="photo.url" alt="" />
+  }
+</section>
